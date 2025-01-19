@@ -1,0 +1,27 @@
+https://imgur.com/a/i2zUBMw - Whiteboard
+
+    Why Add Each Element?
+2 Web Servers (Nginx): Increases availability and redundancy; if one fails, the other can handle traffic
+
+Load Balancer (HAProxy): Distributes traffic between web servers, improving scalability and fault tolerance
+
+Application Server (PHP): Handles dynamic content and business logic
+
+Database Cluster (Primary-Replica): Provides scalability and availability; primary handles writes, replicas handle reads
+
+1. Load Balancer Algorithm:
+Round Robin: Evenly distributes traffic to all web servers
+Least Connections: Routes traffic to the server with the fewest active connections
+
+2. Active-Active vs. Active-Passive:
+Active-Active: Both servers handle traffic. No downtime if one fails
+Active-Passive: One server handles all traffic; the other only activates if the first fails
+
+3. Primary-Replica Database Cluster:
+Primary (Master): Handles writes (insert/update)
+Replica (Slave): Handles reads and replicates data from the primary
+
+    Issues with This Infrastructure:
+SPOF: If the load balancer or primary database fails, it can cause downtime
+Security: No firewall or HTTPS, leaving the system vulnerable
+No Monitoring: Lack of tools to track server health and performance

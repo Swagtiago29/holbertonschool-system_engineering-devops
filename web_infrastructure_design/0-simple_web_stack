@@ -1,0 +1,45 @@
+https://imgur.com/a/M5R5pPh - Whiteboard Explination
+
+1. User Requests the Website
+The user wants to access the website www.foobar.com
+They type www.foobar.com into their browser and hit enter
+
+2. Role of the Domain Name (www.foobar.com)
+Domain name: foobar.com is a human-readable name that points to a specific server on the internet.
+The domain name www.foobar.com is configured to point to the server's IP address: 8.8.8.8.
+In simpler terms: The domain is a shorthand for the server's IP address, making it easier for users to access your site without needing to remember an IP address.
+
+3. DNS Lookup and www Record
+The browser will first need to convert the domain name www.foobar.com into an IP address.
+The DNS (Domain Name System) will resolve www.foobar.com to the IP address 8.8.8.8.
+
+4. Role of the Web Server (Nginx)
+Once the browser gets the IP address (8.8.8.8), it sends an HTTP request to the server at that address.
+The Nginx web server is responsible for accepting incoming requests from the user.
+Nginx handles static files like images, CSS, and JavaScript.
+It also acts as a reverse proxy, forwarding dynamic requests to the application server.
+
+5. Role of the Application Server
+The application server (running PHP in our case) is responsible for running the backend code for the website.
+Nginx receives the request for dynamic content (e.g., a page that requires a database query) and passes it on to the application server (PHP).
+The application server processes the request, interacts with the database if necessary, and sends back the response (typically HTML) to Nginx, which then sends it back to the user’s browser
+
+6. Role of the Database (MySQL)
+The MySQL database stores the website’s data, such as user information, content, posts, etc
+When the application server needs to display dynamic data (e.g., user profile, blog posts), it queries the MySQL database
+The database returns the requested data to the application server, which then processes and formats it for the user
+
+7. Communication Between the Server and the User
+HTTP (Hypertext Transfer Protocol) is used for communication between the user's browser and the server
+The user's browser sends an HTTP request to the server (Nginx), and Nginx returns an HTTP response with the content of the website
+If the content is dynamic, Nginx forwards the request to the application server (PHP), which processes it and communicates with the MySQL database as needed
+
+PROBLEMS.
+
+This setup is simple and works fine for small websites, but it has problems
+
+Single Point of Failure: If the server breaks, the site goes down.
+
+Downtime for Updates: Every time you need to update or restart something, the site will be down for a while.
+
+Hard to Handle Big Traffic: If a lot of people visit the site, the server might get overloaded and slow down.

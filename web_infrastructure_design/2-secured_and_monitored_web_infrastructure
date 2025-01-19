@@ -1,0 +1,13 @@
+https://imgur.com/a/jHPS5j0 - Whiteboard
+
+    Elements
+
+3 Firewalls:
+
+Protect different parts of the infrastructure. One firewall between the internet and load balancer, one between the load balancer and web servers, and one between the web servers and database.
+SSL Certificate for HTTPS:
+
+Encrypts traffic between the user and the server, protecting sensitive data like passwords or payment details
+3 Monitoring Clients:
+
+Collect performance data (e.g., server health, traffic stats) and send it to a monitoring service like Sumologic for analysis and alerts
